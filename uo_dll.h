@@ -32,6 +32,7 @@ typedef int (__stdcall *QUERY)(int);
 extern "C" void Init_uo_dll();
 
 VALUE method_load(VALUE);
+VALUE method_unload(VALUE);
 VALUE method_loaded(VALUE);
 VALUE method_hello_world(VALUE);
 

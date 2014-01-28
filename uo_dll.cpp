@@ -26,12 +26,13 @@ CLEAN       Clean       = NULL;
 EXECUTE     Execute     = NULL;
 QUERY       Query       = NULL;
 
-bool  DllLoaded = false;
-VALUE UoDll     = Qnil;
+bool      DllLoaded = false;
+VALUE     UoDll     = Qnil;
+HINSTANCE hDLL      = NULL;
 
 void init_dll_procs(VALUE self, const char* dll_path)
 {
-  HINSTANCE hDLL = LoadLibrary(dll_path);
+  hDLL = LoadLibrary(dll_path);
 
   if (hDLL != NULL)
   {
@@ -63,7 +64,10 @@ void init_dll_procs(VALUE self, const char* dll_path)
     bind_dll_procs_to_ruby(self);
 
     if (Open == NULL)
+    {
       FreeLibrary(hDLL);
+      hDLL = NULL;
+    }
     else
       DllLoaded = true;
   }
@@ -112,12 +116,20 @@ void Init_uo_dll()
 
   rb_define_method(UoDll, "loaded?",     (RUBY_METHOD)method_loaded,      0);
   rb_define_method(UoDll, "load!",       (RUBY_METHOD)method_load,        0);
+  rb_define_method(UoDll, "unload!",     (RUBY_METHOD)method_unload,      0);
   rb_define_method(UoDll, "hello_world", (RUBY_METHOD)method_hello_world, 0);
 }
 
 VALUE method_load(VALUE self)
 {
   if (!DllLoaded) try_dll_load(self);
+
+  return Qnil;
+}
+
+VALUE method_unload(VALUE self)
+{
+  if (DllLoaded) FreeLibrary(hDLL);
 
   return Qnil;
 }
@@ -142,6 +154,8 @@ VALUE method_hello_world(VALUE self)
   title = GetString(hUo, 1);
   cout << "Hello world, client title is: " << title;
   Close(hUo);
+
+  method_unload(self);
 }
 
 /***********************

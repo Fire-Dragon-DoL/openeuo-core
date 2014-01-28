@@ -56,7 +56,9 @@ class OpenEuoBase
 end
 
 OpenEuo = OpenEuoBase.instance
+# OpenEuo.load!
 
+# puts "uo.dll v#{ OpenEuo.version }"
 OpenEuo.hello_world
 
 # puts "Load status: #{ OpenEuo.loaded? }"
