@@ -56,10 +56,35 @@ class OpenEuoBase
 end
 
 OpenEuo = OpenEuoBase.instance
-# OpenEuo.load!
+OpenEuo.load!
+puts "uo.dll v#{ OpenEuo.version }"
+handle = OpenEuo.open
 
-# puts "uo.dll v#{ OpenEuo.version }"
-OpenEuo.hello_world
+OpenEuo.set_top handle, 0
+OpenEuo.push_str_ref handle, "Set"
+OpenEuo.push_str_ref handle, "CliNr"
+OpenEuo.push_integer handle, 1
+puts "execute: #{ OpenEuo.execute handle }"
+
+OpenEuo.set_top handle, 0
+OpenEuo.push_str_ref handle, "Get"
+OpenEuo.push_str_ref handle, "CliNr"
+puts "execute: #{ OpenEuo.execute handle }"
+puts "result: #{ OpenEuo.get_integer handle, 1 }"
+
+OpenEuo.set_top handle, 0
+OpenEuo.push_str_ref handle, "Call"
+OpenEuo.push_str_ref handle, "Move"
+OpenEuo.push_integer handle, 3148
+OpenEuo.push_integer handle, 1742
+OpenEuo.push_integer handle, 0
+OpenEuo.push_integer handle, 5
+puts "execute: #{ OpenEuo.execute handle }"
+puts "result: #{ OpenEuo.get_boolean handle, 1 }"
+
+OpenEuo.close handle
+OpenEuo.unload!
+# OpenEuo.hello_world
 
 # puts "Load status: #{ OpenEuo.loaded? }"
 # OpenEuo.load!
