@@ -10,7 +10,7 @@ ECHO = $(ECHO1:0=@echo)
 
 #### Start of system configuration section. ####
 
-srcdir = /D/Users/Francesco/Projects/easyuo-ruby
+srcdir = /D/Users/Francesco/Projects/openeuo-ruby/openeuo-core
 topdir = /D/ruby/ruby-2.0.0-p353/include/ruby-2.0.0
 hdrdir = $(topdir)
 arch_hdrdir = D:/ruby/ruby-2.0.0-p353/include/ruby-2.0.0/i386-mingw32

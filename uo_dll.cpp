@@ -130,6 +130,8 @@ VALUE method_load(VALUE self)
 VALUE method_unload(VALUE self)
 {
   if (DllLoaded) FreeLibrary(hDLL);
+  DllLoaded = false;
+  hDLL      = NULL;
 
   return Qnil;
 }
@@ -147,12 +149,21 @@ VALUE method_hello_world(VALUE self)
   method_load(self);
 
   hUo = Open();
+
+  SetTop(hUo, 0);
+  PushStrRef(hUo, const_cast<char*>("Set"));
+  PushStrRef(hUo, const_cast<char*>("CliNr"));
+  PushInteger(hUo, 1);
+  Execute(hUo);
+
   SetTop(hUo, 0);
   PushStrRef(hUo, const_cast<char*>("Get"));
   PushStrRef(hUo, const_cast<char*>("CliTitle"));
   Execute(hUo);
   title = GetString(hUo, 1);
-  cout << "Hello world, client title is: " << title;
+
+  cout << "Hello world, client title is: " << title << endl;
+
   Close(hUo);
 
   method_unload(self);
