@@ -30,6 +30,8 @@ typedef int (__stdcall *EXECUTE)(int);
 
 extern "C" void Init_uo_dll();
 
-VALUE method_test1(VALUE self);
+VALUE method_load(VALUE);
+VALUE method_loaded(VALUE);
 
-void Init_dll_procs();
+void try_dll_load(VALUE);
+void init_dll_procs(VALUE, const char*);

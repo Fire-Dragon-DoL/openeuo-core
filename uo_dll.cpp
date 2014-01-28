@@ -2,6 +2,7 @@
 
 using namespace std;
 
+bool        DllLoaded   = false;
 OPEN        Open        = NULL;
 CLOSE       Close       = NULL;
 VERSION     Version     = NULL;
@@ -27,9 +28,9 @@ EXECUTE     Execute     = NULL;
 
 VALUE UoDll = Qnil;
 
-void Init_dll_procs()
+void init_dll_procs(VALUE self, const char* dll_path)
 {
-  HINSTANCE hDLL = LoadLibrary("uo.dll");
+  HINSTANCE hDLL = LoadLibrary(dll_path);
 
   if (hDLL != NULL)
   {
@@ -56,17 +57,46 @@ void Init_dll_procs()
     Clean       = (CLEAN)       GetProcAddress( hDLL, "Clean"       );
     Execute     = (EXECUTE)     GetProcAddress( hDLL, "Execute"     );
 
-    if (!Open) FreeLibrary(hDLL);
+    if (Open == NULL)
+    {
+      FreeLibrary(hDLL);
+    }
+    else
+    {
+      rb_iv_set(self, "@proc_address_Open", Qtrue);
+    }
   }
+}
+
+void try_dll_load(VALUE self)
+{
+  VALUE dll_path_rb = rb_funcall(self, rb_intern("get_dll_path"), 0);
+  char* dll_path    = StringValueCStr(dll_path_rb);
+
+  init_dll_procs(self, dll_path);
+
+  cout << "\nOpen " << Open << "\n";
+  // rb_raise(rb_eLoadError, dll_path);
 }
 
 void Init_uo_dll()
 {
 	UoDll = rb_define_module("UoDll");
-	rb_define_method(UoDll, "test1", (RUBY_METHOD)method_test1, 0);
+
+	rb_define_method(UoDll, "loaded?", (RUBY_METHOD)method_loaded, 0);
+  rb_define_method(UoDll, "load!",   (RUBY_METHOD)method_load,   0);
 }
 
-VALUE method_test1(VALUE self)
+VALUE method_load(VALUE self)
 {
-	return self;
+  VALUE loaded = rb_funcall(self, rb_intern("loaded?"), 0);
+
+  if (loaded == Qfalse || loaded == Qnil) try_dll_load(self);
+
+  return self;
+}
+
+VALUE method_loaded(VALUE self)
+{
+  return rb_iv_get(self, "@loaded");
 }
