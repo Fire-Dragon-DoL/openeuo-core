@@ -108,9 +108,9 @@ void try_dll_load(VALUE self)
 
 void Init_uo_dll()
 {
-	UoDll = rb_define_module("UoDll");
+  UoDll = rb_define_module("UoDll");
 
-	rb_define_method(UoDll, "loaded?",     (RUBY_METHOD)method_loaded,      0);
+  rb_define_method(UoDll, "loaded?",     (RUBY_METHOD)method_loaded,      0);
   rb_define_method(UoDll, "load!",       (RUBY_METHOD)method_load,        0);
   rb_define_method(UoDll, "hello_world", (RUBY_METHOD)method_hello_world, 0);
 }
