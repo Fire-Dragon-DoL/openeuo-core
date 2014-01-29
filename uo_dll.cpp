@@ -102,8 +102,9 @@ void bind_dll_procs_to_ruby(VALUE self)
 
 void try_dll_load(VALUE self)
 {
-  VALUE dll_path_rb = rb_funcall(self, rb_intern("get_dll_path"), 0);
-  char* dll_path    = StringValueCStr(dll_path_rb);
+  VALUE module_class = rb_funcall(self, rb_intern("class"), 0);
+  VALUE dll_path_rb  = rb_funcall(module_class, rb_intern("get_dll_path"), 0);
+  char* dll_path     = StringValueCStr(dll_path_rb);
 
   init_dll_procs(self, dll_path);
 

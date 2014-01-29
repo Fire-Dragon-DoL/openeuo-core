@@ -1,8 +1,8 @@
 require 'singleton'
 require 'ffi'
 require 'pathname'
-require 'pry'
-require File.expand_path('../uo_dll', __FILE__)
+# require 'pry'
+require File.expand_path('../uo_dll_ffi', __FILE__)
 
 class String
 
@@ -21,7 +21,7 @@ end
 
 class OpenEuoBase
 	include Singleton
-	include UoDll
+	include UoDllFfi
 
 	def self.get_dll_path
 		File.expand_path('../uo.dll', __FILE__).to_s.to_win32_path
@@ -45,9 +45,6 @@ class OpenEuoBase
 end
 
 OpenEuo = OpenEuoBase.instance
-
-# C code test
-OpenEuo.hello_world
 
 # Ruby code test
 OpenEuo.load!

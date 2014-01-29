@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"Open",
+				"OpenEuoFfi"
+			],
+			[
+				"OpenEuoF",
+				"OpenEuoFfiBase"
+			],
+			[
 				"push",
 				"push_integer"
 			],
@@ -24,14 +32,6 @@
 	"buffers":
 	[
 		{
-			"file": "extconf.rb",
-			"settings":
-			{
-				"buffer_size": 216,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "uo_dll.h",
 			"settings":
 			{
@@ -43,35 +43,48 @@
 			"file": "uo_dll.cpp",
 			"settings":
 			{
-				"buffer_size": 8897,
+				"buffer_size": 9173,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/D/ruby/ruby-2.0.0-p353/include/ruby-2.0.0/ruby/ruby.h",
+			"file": "uo_dll_hello_world.rb",
 			"settings":
 			{
-				"buffer_size": 49710,
+				"buffer_size": 2121,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "uo_dll_spec.rb",
+			"file": "uo_dll_bench.rb",
 			"settings":
 			{
-				"buffer_size": 3157,
+				"buffer_size": 3463,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "vendor",
-			"file": ".gitignore",
-			"file_size": 0,
-			"file_write_time": 130353616368052126,
+			"file": "/D/Users/Francesco/.bashrc",
 			"settings":
 			{
-				"buffer_size": 6,
+				"buffer_size": 107,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "uo_dll_ffi.rb",
+			"settings":
+			{
+				"buffer_size": 1131,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "uo_dll_ffi_hello_world.rb",
+			"settings":
+			{
+				"buffer_size": 2095,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -111,10 +124,16 @@
 	},
 	"file_history":
 	[
-		"/D/ruby/ruby-2.0.0-p353/include/ruby-2.0.0/ruby.h",
+		"/D/Users/Francesco/.bash_profile",
+		"/D/Users/Francesco/Projects/openeuo-ruby/openeuo-core/uo_dll_ffi_bench.rb",
 		"/D/Users/Francesco/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/D/Users/Francesco/Desktop/openeuo_131227/OpenEUO/test/uo_dll.h",
+		"/D/Users/Francesco/.ssh/known_hosts",
+		"/D/Users/Francesco/Projects/openeuo-ruby/openeuo-core/uo_dll_spec.rb",
+		"/D/Users/Francesco/Projects/openeuo-ruby/openeuo-core/extconf.rb",
 		"/D/ruby/ruby-2.0.0-p353/include/ruby-2.0.0/ruby/ruby.h",
+		"/D/Users/Francesco/Projects/openeuo-ruby/openeuo-core/.gitignore",
+		"/D/ruby/ruby-2.0.0-p353/include/ruby-2.0.0/ruby.h",
+		"/D/Users/Francesco/Desktop/openeuo_131227/OpenEUO/test/uo_dll.h",
 		"/D/Users/Francesco/Desktop/openeuo_131227/OpenEUO/test/uo_dll.cpp",
 		"/D/Users/Francesco/Desktop/openeuo_131227/OpenEUO/test/extconf.rb",
 		"/D/Users/Francesco/Desktop/openeuo_131227/OpenEUO/test/uo.cpp",
@@ -147,6 +166,35 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"repeats_times",
+			"repeat_times",
+			"handle",
+			"handles",
+			"Open",
+			"open",
+			"get_type",
+			"dll_path",
+			"OpenEuo",
+			"oeuo",
+			"both_oeuos",
+			"OpenEuo",
+			"oeuo",
+			"string",
+			"get_type",
+			"int",
+			"\\t",
+			"string",
+			"[",
+			"int",
+			"string",
+			"SetTop",
+			"attach",
+			"self",
+			"module_class",
+			"get_dll_path",
+			"cout",
+			"CliTitle",
+			"GeSt",
 			"1742",
 			"hDLL",
 			"GetProc",
@@ -245,36 +293,7 @@
 			"rb_funcallself",
 			"#define ID",
 			"ID",
-			"method",
-			"dll_path",
-			"OpenEuo",
-			"UoDll",
-			"OpenUo",
-			"extend",
-			"include",
-			"rb_define_method",
-			"method_test1",
-			"method_is_loaded",
-			");",
-			"hDLL",
-			"RUBY_METHOD",
-			"ruby_method",
-			"VALUE(*)(ANYARGS)",
-			"arguments",
-			"MyTest",
-			"uo_connector",
-			"rb_define_method",
-			"read_string",
-			"to_read_string",
-			"to_exp_str",
-			"encoding",
-			"Get",
-			"Execute",
-			"string",
-			"void",
-			"UoDll",
-			"Open",
-			"open"
+			"method"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -300,39 +319,11 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "extconf.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 216,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "uo_dll.h",
 					"semi_transient": false,
 					"settings":
@@ -344,8 +335,8 @@
 						"selection":
 						[
 							[
-								1194,
-								1194
+								951,
+								951
 							]
 						],
 						"settings":
@@ -353,27 +344,27 @@
 							"syntax": "Packages/C++/C++.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 384.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "uo_dll.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8897,
+						"buffer_size": 9173,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5903,
-								5903
+								4832,
+								4832
 							]
 						],
 						"settings":
@@ -383,57 +374,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1998.0,
+						"translation.y": 1296.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/D/ruby/ruby-2.0.0-p353/include/ruby-2.0.0/ruby/ruby.h",
+					"buffer": 2,
+					"file": "uo_dll_hello_world.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 49710,
+						"buffer_size": 2121,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								13293,
-								13313
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 9365.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "uo_dll_spec.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3157,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2327,
-								2327
+								570,
+								570
 							]
 						],
 						"settings":
@@ -441,38 +402,126 @@
 							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1890.0,
+						"translation.y": 264.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": ".gitignore",
+					"buffer": 3,
+					"file": "uo_dll_bench.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6,
+						"buffer_size": 3463,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6,
-								6
+								1692,
+								1692
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 798.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/D/Users/Francesco/.bashrc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 107,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								106,
+								106
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "uo_dll_ffi.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1131,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								170,
+								170
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "uo_dll_ffi_hello_world.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2095,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2057,
+								1279
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 756.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -529,11 +578,11 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{
