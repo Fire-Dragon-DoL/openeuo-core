@@ -7,6 +7,7 @@ module Openeuo::Core::UoDllFfi
     @loaded
   end
 
+  # This is managed in this way because I want to input dll path dinamically
   def load!
     unless @permanently_loaded
       dll_path = self.class.get_dll_path
@@ -62,7 +63,7 @@ module Openeuo::Core::UoDllFfi
 
   def unload!
     @loaded = false
-    
+
     nil
   end
 end
