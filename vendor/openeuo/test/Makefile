@@ -10,7 +10,7 @@ ECHO = $(ECHO1:0=@echo)
 
 #### Start of system configuration section. ####
 
-srcdir = /D/Users/Francesco/Projects/openeuo-ruby/openeuo-core
+srcdir = /D/Users/Francesco/Desktop/openeuo_131227/OpenEUO/test
 topdir = /D/ruby/ruby-2.0.0-p353/include/ruby-2.0.0
 hdrdir = $(topdir)
 arch_hdrdir = D:/ruby/ruby-2.0.0-p353/include/ruby-2.0.0/i386-mingw32
@@ -136,7 +136,7 @@ LIBS = $(LIBRUBYARG_SHARED)  -lshell32 -lws2_32 -limagehlp -lshlwapi
 ORIG_SRCS = uo_dll.cpp
 SRCS = $(ORIG_SRCS) 
 OBJS = uo_dll.o
-HDRS = $(srcdir)/uo_dll.h
+HDRS = 
 TARGET = uo_dll
 TARGET_NAME = uo_dll
 TARGET_ENTRY = Init_$(TARGET_NAME)
